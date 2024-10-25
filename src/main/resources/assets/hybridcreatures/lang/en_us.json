@@ -1,4 +1,5 @@
 {
-  "item.llama_blaze_spawn_egg.name": "Llama Blaze Spawn Egg",
+  "itemGroup.hybridcreatures": "Hybrid Creatures",
+  "item.hybridcreatures.llama_blaze_spawn_egg": "Llama Blaze Spawn Egg",
   "entity.hybridcreatures.llama_blaze": "Llama Blaze"
 }

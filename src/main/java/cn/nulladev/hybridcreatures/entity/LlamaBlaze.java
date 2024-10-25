@@ -2,6 +2,9 @@ package cn.nulladev.hybridcreatures.entity;
 
 import cn.nulladev.hybridcreatures.init.EntityInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -11,8 +14,6 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.LlamaSpit;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 
 import java.util.EnumSet;
@@ -49,6 +50,21 @@ public class LlamaBlaze extends Monster {
                 .add(Attributes.FOLLOW_RANGE, 48.0D);
     }
 
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.LLAMA_AMBIENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource p_30803_) {
+        return SoundEvents.LLAMA_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.LLAMA_DEATH;
+    }
+
     static class LlamaBlazeAttackGoal extends Goal {
         private final LlamaBlaze llamaBlaze;
         private int attackStep;
@@ -70,7 +86,6 @@ public class LlamaBlaze extends Monster {
         }
 
         public void stop() {
-//            this.llamaBlaze.setCharged(false);
             this.lastSeen = 0;
         }
 
@@ -109,26 +124,27 @@ public class LlamaBlaze extends Monster {
                         ++this.attackStep;
                         if (this.attackStep == 1) {
                             this.attackTime = 60;
-//                            this.llamaBlaze.setCharged(true);
                         } else if (this.attackStep <= 4) {
                             this.attackTime = 6;
                         } else {
                             this.attackTime = 100;
                             this.attackStep = 0;
-//                            this.llamaBlaze.setCharged(false);
                         }
 
                         if (this.attackStep > 1) {
                             double d4 = Math.sqrt(Math.sqrt(d0)) * 0.5D;
                             if (!this.llamaBlaze.isSilent()) {
-                                this.llamaBlaze.level().levelEvent((Player)null, 1018, this.llamaBlaze.blockPosition(), 0);
+                                this.llamaBlaze.level().levelEvent(null, 1018, this.llamaBlaze.blockPosition(), 0);
                             }
 
                             for(int i = 0; i < 1; ++i) {
-//                                LlamaBlazeSpit llamaBlazeSpit = new LlamaBlazeSpit(this.llamaBlaze.level(), this.llamaBlaze);
-                                SmallFireball smallfireball = new SmallFireball(this.llamaBlaze.level(), this.llamaBlaze, this.llamaBlaze.getRandom().triangle(d1, 2.297D * d4), d2, this.llamaBlaze.getRandom().triangle(d3, 2.297D * d4));
-                                smallfireball.setPos(smallfireball.getX(), this.llamaBlaze.getY(0.5D) + 0.5D, smallfireball.getZ());
-                                this.llamaBlaze.level().addFreshEntity(smallfireball);
+                                LlamaBlazeSpit llamaBlazeSpit = new LlamaBlazeSpit(this.llamaBlaze.level(), this.llamaBlaze);
+                                double d21 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
+                                llamaBlazeSpit.shoot(d1, d2 + d21, d3, 1.5F, 10.0F);
+                                if (!this.llamaBlaze.isSilent()) {
+                                    this.llamaBlaze.level().playSound(null, this.llamaBlaze.getX(), this.llamaBlaze.getY(), this.llamaBlaze.getZ(), SoundEvents.LLAMA_SPIT, this.llamaBlaze.getSoundSource(), 1.0F, 1.0F + (this.llamaBlaze.random.nextFloat() - this.llamaBlaze.random.nextFloat()) * 0.2F);
+                                }
+                                this.llamaBlaze.level().addFreshEntity(llamaBlazeSpit);
                             }
                         }
                     }

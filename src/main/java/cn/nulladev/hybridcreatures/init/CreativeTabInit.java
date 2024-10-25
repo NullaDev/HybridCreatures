@@ -24,7 +24,7 @@ public class CreativeTabInit {
 
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = TABS.register("example_tab",
             () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.example_tab"))
+                    .title(Component.translatable("itemGroup.hybridcreatures"))
                     .icon(Items.AIR::getDefaultInstance)
                     .displayItems((displayParams, output) ->
                             EXAMPLE_TAB_ITEMS.forEach(itemLike -> output.accept(itemLike.get())))
