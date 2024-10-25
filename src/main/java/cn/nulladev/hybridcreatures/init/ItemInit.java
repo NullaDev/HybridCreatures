@@ -11,6 +11,6 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HybridCreatures.MODID);
 
-    public static final RegistryObject<ForgeSpawnEggItem> EXAMPLE_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("example_spawn_egg",
+    public static final RegistryObject<ForgeSpawnEggItem> LLAMA_BLAZE_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("llama_blaze_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityInit.LLAMA_BLAZE, 0xF0ABD1, 0xAE4C82, new Item.Properties())));
 }

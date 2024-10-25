@@ -13,7 +13,7 @@ public class EntityInit {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, HybridCreatures.MODID);
 
-    public static final RegistryObject<EntityType<LlamaBlaze>> LLAMA_BLAZE = ENTITIES.register("example_entity",
+    public static final RegistryObject<EntityType<LlamaBlaze>> LLAMA_BLAZE = ENTITIES.register("llama_blaze",
             () -> EntityType.Builder.<LlamaBlaze>of(LlamaBlaze::new, MobCategory.MONSTER)
                     .sized(1.0f, 1.0f)
                     .build(new ResourceLocation(HybridCreatures.MODID, "llama_blaze").toString())
