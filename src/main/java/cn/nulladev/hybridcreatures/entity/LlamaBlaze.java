@@ -45,7 +45,7 @@ public class LlamaBlaze extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
-                .add(Attributes.ATTACK_DAMAGE, 6.0D)
+                .add(Attributes.ATTACK_DAMAGE, 2.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.23D)
                 .add(Attributes.FOLLOW_RANGE, 48.0D);
     }
@@ -63,6 +63,11 @@ public class LlamaBlaze extends Monster {
     @Override
     protected SoundEvent getDeathSound() {
         return SoundEvents.LLAMA_DEATH;
+    }
+
+    @Override
+    protected boolean shouldDespawnInPeaceful() {
+        return true;
     }
 
     static class LlamaBlazeAttackGoal extends Goal {

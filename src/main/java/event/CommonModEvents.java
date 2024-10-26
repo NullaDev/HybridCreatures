@@ -16,6 +16,7 @@ public class CommonModEvents {
     @SubscribeEvent
     public static void entityAttributes(EntityAttributeCreationEvent event) {
         event.put(EntityInit.LLAMA_BLAZE.get(), LlamaBlaze.createAttributes().build());
+        event.put(EntityInit.CHICKEN_GHAST.get(), LlamaBlaze.createAttributes().build());
     }
 
     @SubscribeEvent
