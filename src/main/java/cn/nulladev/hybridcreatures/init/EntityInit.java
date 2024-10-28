@@ -3,7 +3,7 @@ package cn.nulladev.hybridcreatures.init;
 import cn.nulladev.hybridcreatures.HybridCreatures;
 import cn.nulladev.hybridcreatures.entity.ChickenGhast;
 import cn.nulladev.hybridcreatures.entity.LlamaBlaze;
-import cn.nulladev.hybridcreatures.entity.LlamaBlazeSpit;
+import cn.nulladev.hybridcreatures.entity.PigSlime;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -25,5 +25,11 @@ public class EntityInit {
             () -> EntityType.Builder.<ChickenGhast>of(ChickenGhast::new, MobCategory.MONSTER)
                     .sized(4.0F, 4.0F).clientTrackingRange(10)
                     .build(new ResourceLocation(HybridCreatures.MODID, "chicken_ghast").toString())
+    );
+
+    public static final RegistryObject<EntityType<PigSlime>> PIG_SLIME = ENTITIES.register("pig_slime",
+            () -> EntityType.Builder.<PigSlime>of(PigSlime::new, MobCategory.MONSTER)
+                    .sized(4.0F, 4.0F).clientTrackingRange(10)
+                    .build(new ResourceLocation(HybridCreatures.MODID, "pig_slime").toString())
     );
 }

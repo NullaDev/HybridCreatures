@@ -15,5 +15,8 @@ public class ItemInit {
             () -> new ForgeSpawnEggItem(EntityInit.LLAMA_BLAZE, 0xFCEBC6, 0x375482, new Item.Properties())));
 
     public static final RegistryObject<ForgeSpawnEggItem> CHICKEN_GHAST_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("chicken_ghast_spawn_egg",
-            () -> new ForgeSpawnEggItem(EntityInit.CHICKEN_GHAST, 0xFCEBC6, 0x375482, new Item.Properties())));
+            () -> new ForgeSpawnEggItem(EntityInit.CHICKEN_GHAST, 0xFFFFFF, 0xFF0000, new Item.Properties())));
+
+    public static final RegistryObject<ForgeSpawnEggItem> PIG_SLIME_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("pig_slime_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.PIG_SLIME, 0xE58E89, 0xC6615A, new Item.Properties())));
 }

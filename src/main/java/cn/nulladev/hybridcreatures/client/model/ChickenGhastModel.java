@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
-public class ChickenGhastModel <T extends ChickenGhast> extends EntityModel<T> {
+public class ChickenGhastModel<T extends ChickenGhast> extends EntityModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "chicken"), "main");
     private final ModelPart head;
     private final ModelPart bill;

@@ -12,7 +12,7 @@ public class LlamaBlazeRenderer extends MobRenderer<LlamaBlaze, LlamaBlazeModel<
             new ResourceLocation(HybridCreatures.MODID, "textures/entity/llama_blaze.png");
 
     public LlamaBlazeRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx, new LlamaBlazeModel<>(ctx.bakeLayer(LlamaBlazeModel.LAYER_LOCATION)), 1.0f);
+        super(ctx, new LlamaBlazeModel<>(ctx.bakeLayer(LlamaBlazeModel.LAYER_LOCATION)), 0.5F);
     }
 
     @Override
