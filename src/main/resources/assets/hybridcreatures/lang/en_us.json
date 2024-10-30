@@ -3,7 +3,9 @@
   "item.hybridcreatures.llama_blaze_spawn_egg": "Llama Blaze Spawn Egg",
   "item.hybridcreatures.chicken_ghast_spawn_egg": "Chicken Ghast Spawn Egg",
   "item.hybridcreatures.pig_slime_spawn_egg": "Pig Slime Spawn Egg",
+  "item.hybridcreatures.snow_shulker_spawn_egg": "Snow Shulker Spawn Egg",
   "entity.hybridcreatures.llama_blaze": "Llama Blaze",
   "entity.hybridcreatures.chicken_ghast": "Chicken Ghast",
-  "entity.hybridcreatures.pig_slime": "Pig Slime"
+  "entity.hybridcreatures.pig_slime": "Pig Slime",
+  "entity.hybridcreatures.snow_shulker": "Snow Shulker"
 }

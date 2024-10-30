@@ -14,7 +14,7 @@ public class ExplosiveEgg extends ThrownEgg {
     public double yPower;
     public double zPower;
 
-    public ExplosiveEgg(EntityType<? extends ExplosiveEgg> type, Level level) {
+    public ExplosiveEgg(EntityType<? extends ThrownEgg> type, Level level) {
         super(type, level);
     }
 

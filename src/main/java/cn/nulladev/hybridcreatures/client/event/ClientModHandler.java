@@ -18,6 +18,7 @@ public class ClientModHandler {
         event.registerEntityRenderer(EntityInit.LLAMA_BLAZE.get(), LlamaBlazeRenderer::new);
         event.registerEntityRenderer(EntityInit.CHICKEN_GHAST.get(), ChickenGhastRenderer::new);
         event.registerEntityRenderer(EntityInit.PIG_SLIME.get(), PigSlimeRenderer::new);
+        event.registerEntityRenderer(EntityInit.SNOW_SHULKER.get(), SnowShulkerRenderer::new);
     }
 
     @SubscribeEvent
@@ -26,5 +27,6 @@ public class ClientModHandler {
         event.registerLayerDefinition(ChickenGhastModel.LAYER_LOCATION, ChickenGhastModel::createBodyLayer);
         event.registerLayerDefinition(PigSlimeModel.LAYER_LOCATION, PigSlimeModel::createBodyLayer);
         event.registerLayerDefinition(PigSlimeModel.LAYER_LOCATION_OUTER, PigSlimeModel::createOuterLayer);
+        event.registerLayerDefinition(SnowShulkerModel.LAYER_LOCATION, SnowShulkerModel::createBodyLayer);
     }
 }
