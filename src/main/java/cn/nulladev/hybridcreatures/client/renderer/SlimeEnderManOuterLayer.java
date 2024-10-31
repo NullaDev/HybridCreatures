@@ -1,7 +1,7 @@
 package cn.nulladev.hybridcreatures.client.renderer;
 
-import cn.nulladev.hybridcreatures.client.model.PigSlimeModel;
-import cn.nulladev.hybridcreatures.entity.PigSlime;
+import cn.nulladev.hybridcreatures.client.model.SlimeEnderManModel;
+import cn.nulladev.hybridcreatures.entity.SlimeEnderMan;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
@@ -12,16 +12,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
-@OnlyIn(Dist.CLIENT)
-public class PigSlimeOuterLayer<T extends PigSlime> extends RenderLayer<T, PigSlimeModel<T>> {
+public class SlimeEnderManOuterLayer<T extends SlimeEnderMan> extends RenderLayer<T, SlimeEnderManModel<T>> {
     private final EntityModel<T> model;
 
-    public PigSlimeOuterLayer(RenderLayerParent<T, PigSlimeModel<T>> p_174536_, EntityModelSet p_174537_) {
+    public SlimeEnderManOuterLayer(RenderLayerParent<T, SlimeEnderManModel<T>> p_174536_, EntityModelSet p_174537_) {
         super(p_174536_);
-        this.model = new PigSlimeModel<>(p_174537_.bakeLayer(PigSlimeModel.LAYER_LOCATION_OUTER));
+        this.model = new SlimeEnderManModel<>(p_174537_.bakeLayer(SlimeEnderManModel.LAYER_LOCATION_OUTER));
     }
 
     public void render(PoseStack p_117470_, MultiBufferSource p_117471_, int p_117472_, T p_117473_, float p_117474_, float p_117475_, float p_117476_, float p_117477_, float p_117478_, float p_117479_) {

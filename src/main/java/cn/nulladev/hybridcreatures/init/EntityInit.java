@@ -38,4 +38,10 @@ public class EntityInit {
                     .sized(1.0F, 1.0F).clientTrackingRange(10)
                     .build(new ResourceLocation(HybridCreatures.MODID, "snow_shulker").toString())
     );
+
+    public static final RegistryObject<EntityType<SlimeEnderMan>> SLIME_ENDER_MAN = ENTITIES.register("slime_ender_man",
+            () -> EntityType.Builder.<SlimeEnderMan>of(SlimeEnderMan::new, MobCategory.MONSTER)
+                    .sized(0.6F, 2.9F).clientTrackingRange(8)
+                    .build(new ResourceLocation(HybridCreatures.MODID, "slime_ender_man").toString())
+    );
 }

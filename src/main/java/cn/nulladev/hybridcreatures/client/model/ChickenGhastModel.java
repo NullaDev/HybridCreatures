@@ -1,5 +1,6 @@
 package cn.nulladev.hybridcreatures.client.model;
 
+import cn.nulladev.hybridcreatures.HybridCreatures;
 import cn.nulladev.hybridcreatures.entity.ChickenGhast;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -12,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 public class ChickenGhastModel<T extends ChickenGhast> extends EntityModel<T> {
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "chicken"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(HybridCreatures.MODID, "chicken_ghast"), "main");
     private final ModelPart head;
     private final ModelPart bill;
     private final ModelPart chin;
