@@ -44,4 +44,10 @@ public class EntityInit {
                     .sized(0.6F, 2.9F).clientTrackingRange(8)
                     .build(new ResourceLocation(HybridCreatures.MODID, "slime_ender_man").toString())
     );
+
+    public static final RegistryObject<EntityType<CreeperChicken>> CREEPER_CHICKEN = ENTITIES.register("creeper_chicken",
+            () -> EntityType.Builder.<CreeperChicken>of(CreeperChicken::new, MobCategory.CREATURE)
+                    .sized(0.4F, 0.7F).clientTrackingRange(10)
+                    .build(new ResourceLocation(HybridCreatures.MODID, "creeper_chicken").toString())
+    );
 }
