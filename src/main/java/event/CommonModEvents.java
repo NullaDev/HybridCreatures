@@ -21,6 +21,7 @@ public class CommonModEvents {
         event.put(EntityInit.SNOW_SHULKER.get(), SnowShulker.createAttributes().build());
         event.put(EntityInit.SLIME_ENDER_MAN.get(), SlimeEnderMan.createAttributes().build());
         event.put(EntityInit.CREEPER_CHICKEN.get(), CreeperChicken.createAttributes().build());
+        event.put(EntityInit.WOLF_WITHER.get(), WolfWither.createAttributes().build());
     }
 
     @SubscribeEvent

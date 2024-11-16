@@ -50,4 +50,16 @@ public class EntityInit {
                     .sized(0.4F, 0.7F).clientTrackingRange(10)
                     .build(new ResourceLocation(HybridCreatures.MODID, "creeper_chicken").toString())
     );
+
+    public static final RegistryObject<EntityType<WolfWither>> WOLF_WITHER = ENTITIES.register("wolf_wither",
+            () -> EntityType.Builder.<WolfWither>of(WolfWither::new, MobCategory.MONSTER)
+                    .sized(0.9F, 3.5F).clientTrackingRange(10)
+                    .build(new ResourceLocation(HybridCreatures.MODID, "wolf_wither").toString())
+    );
+
+    public static final RegistryObject<EntityType<DogHead>> DOG_HEAD = ENTITIES.register("dog_head",
+            () -> EntityType.Builder.<DogHead>of(DogHead::new, MobCategory.MISC)
+                    .sized(0.3125F, 0.3125F).clientTrackingRange(4)
+                    .build(new ResourceLocation(HybridCreatures.MODID, "wolf_wither").toString())
+    );
 }

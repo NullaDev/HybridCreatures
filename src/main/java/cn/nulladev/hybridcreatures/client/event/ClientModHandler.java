@@ -21,6 +21,8 @@ public class ClientModHandler {
         event.registerEntityRenderer(EntityInit.SNOW_SHULKER.get(), SnowShulkerRenderer::new);
         event.registerEntityRenderer(EntityInit.SLIME_ENDER_MAN.get(), SlimeEnderManRenderer::new);
         event.registerEntityRenderer(EntityInit.CREEPER_CHICKEN.get(), CreeperChickenRenderer::new);
+        event.registerEntityRenderer(EntityInit.WOLF_WITHER.get(), WolfWitherRenderer::new);
+        event.registerEntityRenderer(EntityInit.DOG_HEAD.get(), DogHeadRenderer::new);
     }
 
     @SubscribeEvent
@@ -33,5 +35,7 @@ public class ClientModHandler {
         event.registerLayerDefinition(SlimeEnderManModel.LAYER_LOCATION, SlimeEnderManModel::createBodyLayer);
         event.registerLayerDefinition(SlimeEnderManModel.LAYER_LOCATION_OUTER, SlimeEnderManModel::createOuterLayer);
         event.registerLayerDefinition(CreeperChickenModel.LAYER_LOCATION, CreeperChickenModel::createBodyLayer);
+        event.registerLayerDefinition(WolfWitherModel.LAYER_LOCATION, WolfWitherModel::createBodyLayer);
+        event.registerLayerDefinition(DogHeadModel.LAYER_LOCATION, DogHeadModel::createHeadLayer);
     }
 }

@@ -6,10 +6,12 @@
   "item.hybridcreatures.snow_shulker_spawn_egg": "Snow Shulker Spawn Egg",
   "item.hybridcreatures.slime_ender_man_spawn_egg": "Slime Enderman Spawn Egg",
   "item.hybridcreatures.creeper_chicken_spawn_egg": "Creeper Chicken Spawn Egg",
+  "item.hybridcreatures.wolf_wither_spawn_egg": "Wolf Wither Spawn Egg",
   "entity.hybridcreatures.llama_blaze": "Llama Blaze",
   "entity.hybridcreatures.chicken_ghast": "Chicken Ghast",
   "entity.hybridcreatures.pig_slime": "Pig Slime",
   "entity.hybridcreatures.snow_shulker": "Snow Shulker",
   "entity.hybridcreatures.slime_ender_man": "Slime Enderman",
-  "entity.hybridcreatures.creeper_chicken": "Creeper Chicken"
+  "entity.hybridcreatures.creeper_chicken": "Creeper Chicken",
+  "entity.hybridcreatures.wolf_wither": "Wolf Wither"
 }
