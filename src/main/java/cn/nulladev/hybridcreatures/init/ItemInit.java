@@ -31,4 +31,7 @@ public class ItemInit {
 
     public static final RegistryObject<ForgeSpawnEggItem> WOLF_WITHER_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("wolf_wither_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityInit.WOLF_WITHER, 0xDDDADB, 0xCEAF96, new Item.Properties())));
+
+    public static final RegistryObject<ForgeSpawnEggItem> BLAZE_SNOW_GOLEM_SPAWN_EGG = CreativeTabInit.addToTab(ITEMS.register("blaze_snow_golem_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.BLAZE_SNOW_GOLEM, 0x5F0201, 0xFFF847, new Item.Properties())));
 }

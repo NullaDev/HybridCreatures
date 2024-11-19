@@ -62,4 +62,10 @@ public class EntityInit {
                     .sized(0.3125F, 0.3125F).clientTrackingRange(4)
                     .build(new ResourceLocation(HybridCreatures.MODID, "wolf_wither").toString())
     );
+
+    public static final RegistryObject<EntityType<BlazeSnowGolem>> BLAZE_SNOW_GOLEM = ENTITIES.register("blaze_snow_golem",
+            () -> EntityType.Builder.<BlazeSnowGolem>of(BlazeSnowGolem::new, MobCategory.MISC)
+                    .sized(0.7F, 1.9F).clientTrackingRange(8).fireImmune()
+                    .build(new ResourceLocation(HybridCreatures.MODID, "blaze_snow_golem").toString())
+    );
 }

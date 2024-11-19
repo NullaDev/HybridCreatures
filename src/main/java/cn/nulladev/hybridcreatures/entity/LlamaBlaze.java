@@ -2,6 +2,7 @@ package cn.nulladev.hybridcreatures.entity;
 
 import cn.nulladev.hybridcreatures.init.EntityInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -15,10 +16,14 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
 public class LlamaBlaze extends Monster {
+    private float allowedHeightOffset = 0.5F;
+    private int nextHeightOffsetChangeTick;
+
     public LlamaBlaze(EntityType<? extends LlamaBlaze> type, Level level) {
         super(type, level);
     }
@@ -68,6 +73,32 @@ public class LlamaBlaze extends Monster {
     @Override
     protected boolean shouldDespawnInPeaceful() {
         return true;
+    }
+
+    @Override
+    public void aiStep() {
+        if (!this.onGround() && this.getDeltaMovement().y < 0.0D) {
+            this.setDeltaMovement(this.getDeltaMovement().multiply(1.0D, 0.6D, 1.0D));
+        }
+        super.aiStep();
+    }
+
+    @Override
+    protected void customServerAiStep() {
+        --this.nextHeightOffsetChangeTick;
+        if (this.nextHeightOffsetChangeTick <= 0) {
+            this.nextHeightOffsetChangeTick = 100;
+            this.allowedHeightOffset = (float)this.random.triangle(0.5D, 6.891D);
+        }
+
+        LivingEntity livingentity = this.getTarget();
+        if (livingentity != null && livingentity.getEyeY() > this.getEyeY() + (double)this.allowedHeightOffset && this.canAttack(livingentity)) {
+            Vec3 vec3 = this.getDeltaMovement();
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, ((double)0.3F - vec3.y) * (double)0.3F, 0.0D));
+            this.hasImpulse = true;
+        }
+
+        super.customServerAiStep();
     }
 
     static class LlamaBlazeAttackGoal extends Goal {
